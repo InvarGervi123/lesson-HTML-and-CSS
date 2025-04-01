@@ -7,7 +7,27 @@
             poooooooop
         </title>
         <style>
-            body {transition: background-color 0.5s;}
+                    body {
+            margin: 0;
+            overflow: auto;
+            transition: background-color 0.5s;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background-color: white;
+            opacity: 0.8;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
         </style>
     </hand>
     <body> <!-- style="background-color: blue;"-->
@@ -48,6 +68,25 @@
                 document.body.style.backgroundColor = getRandomColor();
             });
 
+            function createSnowflake() {
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+
+            const size = Math.random() * 5 + 5; // גודל בין 5 ל-10 פיקסלים
+            snowflake.style.width = `${size}px`;
+            snowflake.style.height = `${size}px`;
+
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // מהירות נפילה אקראית
+
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 100);
             /*
             setInterval(() => {
                 document.body.style.backgroundColor = getRandomColor();

@@ -1,0 +1,135 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="w3food.html">FOOD</a>
+    <a href="w3help.html">HELP</a>
+</body>
+</html>
+<----->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slime Splash Party</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+
+    .slime {
+      position: absolute;
+      bottom: 0;
+      width: 200%;
+      height: 40vh;
+      animation: slimeMove 6s ease-in-out infinite alternate;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slime path {
+      fill: purple;
+      animation: slimeStretch 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes slimeMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes slimeStretch {
+      0% {
+        d: path("M0,192L60,202.7C120,213,240,235,360,218.7C480,203,600,149,720,144C840,139,960,181,1080,176C1200,171,1320,117,1380,90.7L1440,64L1440,320L0,320Z");
+      }
+      100% {
+        d: path("M0,200L60,210C120,220,240,240,360,210C480,180,600,160,720,150C840,140,960,170,1080,160C1200,150,1320,110,1380,85L1440,60L1440,320L0,320Z");
+      }
+    }
+
+    .splash {
+      position: absolute;
+      bottom: 80px;
+      width: 20px;
+      height: 20px;
+      background-color: purple;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes splashUp {
+      0% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      50% {
+        transform: translate(-50%, -150px) scale(1.3);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, 0) scale(0.8);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- סליים -->
+  <div class="slime">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path d="M0,192L60,202.7C120,213,240,235,360,218.7C480,203,600,149,720,144C840,139,960,181,1080,176C1200,171,1320,117,1380,90.7L1440,64L1440,320L0,320Z"></path>
+    </svg>
+  </div>
+
+  <!-- השפרצות יווצרו כאן -->
+  <script>
+    function createSplash() {
+      const splash = document.createElement('div');
+      splash.classList.add('splash');
+
+      // מיקום רנדומלי לרוחב המסך
+      const x = Math.random() * window.innerWidth;
+
+      // גובה מקסימלי של קפיצה
+      const height = Math.random() * 100 + 100;
+
+      // גודל רנדומלי
+      const size = Math.random() * 20 + 10;
+
+      splash.style.left = `${x}px`;
+      splash.style.width = `${size}px`;
+      splash.style.height = `${size}px`;
+
+      // הוספת האנימציה עם גובה שונה
+      splash.style.animation = `splashUp ${Math.random() * 1 + 1.5}s ease-in-out`;
+      splash.style.setProperty('--splash-height', `${height}px`);
+
+      document.body.appendChild(splash);
+
+      // הסרה אחרי שהאנימציה נגמרת
+      splash.addEventListener('animationend', () => {
+        splash.remove();
+      });
+    }
+
+    // כל חצי שנייה בערך – שפריץ חדש
+    setInterval(createSplash, 500);
+  </script>
+    <a href="w3food.html">FOOD</a>
+    <a href="w3help.html">HELP</a>
+</body>
+</html>

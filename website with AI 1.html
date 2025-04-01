@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>רקע שמתפרק במגע העכבר</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #2c3e50; /* רקע כהה */
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // מחלקה של חלקיק
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = Math.random() * 3 + 1;
+        this.color = color;
+        this.speedX = (Math.random() - 0.5) * 5;
+        this.speedY = (Math.random() - 0.5) * 5;
+        this.alpha = 1;
+        this.life = Math.random() * 30 + 30; // משך חיים של החלקיק (במספר פריימים)
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.life--;
+        if (this.life < 0) {
+          this.alpha -= 0.02;
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+    
+    // מערך לאחסון החלקיקים
+    let particles = [];
+    
+    // פונקציה ליצירת חלקיקים במיקום נתון
+    function createParticles(x, y) {
+      const colors = ['#e74c3c', '#f1c40f', '#2ecc71', '#3498db', '#9b59b6'];
+      for (let i = 0; i < 50; i++) {
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        particles.push(new Particle(x, y, color));
+      }
+    }
+    
+    // פונקציית האנימציה
+    function animate() {
+      // צובע רקע שקוף במעט כדי ליצור אפקט "עקבות"
+      ctx.fillStyle = "rgba(44, 62, 80, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // מעדכן ומצייר כל חלקיק
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      
+      // מסיר חלקיקים שכבר נעלמו (alpha=0)
+      particles = particles.filter(p => p.alpha > 0);
+      
+      requestAnimationFrame(animate);
+    }
+    
+    // מאזין לתנועת העכבר, ויוצר חלקיקים בכל תנועה
+    canvas.addEventListener('mousemove', function(e) {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      createParticles(mouseX, mouseY);
+    });
+    
+    // עדכון ממדי הקנבס בעת שינוי גודל חלון
+    window.addEventListener('resize', function() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+    
+    // התחלת האנימציה
+    animate();
+  </script>
+</body>
+</html>
