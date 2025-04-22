@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <title>גלאי מ"צ</title>
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet/dist/leaflet.css" 
+  />
+  <style>
+    #map { height: 100vh; }
+    .leaflet-popup-content { direction: rtl; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // 1. אתחול מפה
+    const map = L.map('map').setView([31.77, 35.21], 8); // מרכז: ירושלים
+
+    // 2. שיכבת אריחים (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 3. טעינת נתוני GeoJSON (אפשר להחליף בנתיב לשרת)
+    fetch('data/matz.geojson')
+      .then(res => res.json())
+      .then(geojson => {
+        L.geoJSON(geojson, {
+          pointToLayer: (feature, latlng) =>
+            L.marker(latlng, { title: feature.properties.name }),
+          onEachFeature: (feature, layer) => {
+            layer.bindPopup(`<b>${feature.properties.name}</b>`);
+          }
+        }).addTo(map);
+      })
+      .catch(err => {
+        console.error('שגיאה בטעינת קבצי GeoJSON:', err);
+        alert('לא ניתן לטעון את מיקומי המ”צ – בדוק חיבור לרשת או נתיב קובץ.');
+      });
+  </script>
+</body>
+</html>

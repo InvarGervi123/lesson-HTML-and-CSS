@@ -1,0 +1,16 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": { "name": "מוצב מ\"צ גולני" },
+        "geometry": { "type": "Point", "coordinates": [35.289, 32.918] }
+      },
+      {
+        "type": "Feature",
+        "properties": { "name": "מוצב מ\"צ דרום" },
+        "geometry": { "type": "Point", "coordinates": [34.781, 31.251] }
+      }
+    ]
+  }
+  
