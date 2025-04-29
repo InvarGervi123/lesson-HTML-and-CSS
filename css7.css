@@ -10,3 +10,8 @@
 {
     color: pink;
 }
+
+h1:hover
+{
+    color: green;
+}
