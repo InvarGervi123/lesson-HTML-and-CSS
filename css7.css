@@ -13,11 +13,17 @@
 
 h1:hover
 {
+    /*
     color: green;
     background-color: aqua;
     cursor: zoom-in;
     border: 10px solid brown;
     padding: 5px;
+    */
+    color:blueviolet;
+    background-color: aquamarine;
+    border : 20px solid orange;
+    padding: 3px;
     cursor: wait;
 }
 
