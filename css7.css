@@ -14,4 +14,29 @@
 h1:hover
 {
     color: green;
+    background-color: aqua;
+    cursor: zoom-in;
+    border: 10px solid brown;
+    padding: 5px;
+    cursor: wait;
+}
+
+.title
+{
+    border-width: 3px;
+    border-right-style: solid;
+    color:aqua;
+}
+
+div
+{
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 80px;    
+}
+
+body
+{
+    background-image: url('iK0j5L.gif');
 }
