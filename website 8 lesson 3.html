@@ -9,10 +9,14 @@
         {
             width: 100px;
             height: 100px;
-            animation-name: example;
             animation-duration: 3s;
             animation-iteration-count: 4;
             animation-delay: 0.1s;
+        }
+
+        #example
+        {
+            animation-name: example;
         }
 
         @keyframes example
@@ -20,9 +24,22 @@
             from {width:100px;height: 100px;}
             to {width:500px;height: 900px;}
         }
+
+        #loop:hover
+        {
+            animation-name: loop;
+        }
+        
+        @keyframes loop
+        {            
+            from {transform: rotate(25deg);}
+            to {transform: rotate(360deg);}
+        }
     </style>
 </head>
 <body style="background-color: aqua;">
-    <img src="iK0j5L.gif">
+    <img id="loop" src="iK0j5L.gif">
+    <br>
+    <img id="example" src="iK0j5L.gif">
 </body>
 </html>
