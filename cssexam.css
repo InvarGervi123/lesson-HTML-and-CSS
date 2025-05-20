@@ -1,0 +1,65 @@
+h1
+{
+    /* זה משנה את כל הH1 */
+    color:darkviolet;
+    /* צבע */
+    /* למחוק */
+    /* text-decoration-line: underline; */
+    /* מתחת לטקסט */
+    /* text-decoration-style: wavy; */
+    /* מקווקב */
+    /* text-decoration-color: rgb(0, 0, 0); */
+    /* צבע למתחת לטקסט */
+    /* background-color: black; */
+    /* צבע הרקע */
+    /* למחוק */
+    outline: 2px dashed black;
+    /* מסגרת שחורה מקווקת בעובי 2 PX */
+    padding: 10px;
+    /* מרחק 10 PX */
+}
+
+.gold
+{
+    /* זה CLASS */
+    color: gold;
+    /* מחלקה לצבע זהב */
+}
+
+h1:hover
+{
+    /* שעכבר עובר בטקסט קורה שינוי */
+    background-color: green;
+    /* צבע רקע ירוק */
+}
+
+#color_calls
+{
+    /* זה ID */
+    background-color: green;
+    /* צבע רקע ירוק */
+}
+
+/* משלי לא קשור למשימות */
+body
+{
+    background-image: url('gettyimages-1273516682.jpg');
+}
+h2
+{
+    background-color: brown;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p
+{
+    background-color: blue;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul
+{
+    background-color: rgb(0, 255, 55);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
