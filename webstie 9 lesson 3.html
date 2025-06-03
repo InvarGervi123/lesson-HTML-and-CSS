@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #line
+        {
+            display: flex;
+        }
+        .square
+        {
+            height: 100px;
+            width: 100px;
+        }
+        #blue
+        {
+            background-color: blue;
+        }
+        #yellow
+        {
+            background-color: yellow;
+        }
+        #red
+        {
+            background-color: red;
+        }
+        #green
+        {
+            background-color: green;
+            position: relative;
+            left: 500px;
+        }
+        .left
+        {
+            position: relative;
+            left: 100px
+        }
+        .all_left
+        {
+            position: relative;
+            left: 200px;
+        }
+        #inleft
+        {
+            position: relative;
+            left: 150px;
+            top: 150px;
+        }
+        #green_rote
+        {
+            background-color: green;
+            position: relative;
+            left: 700px;
+            rotate: 50deg;
+        }
+    </style>
+</head>
+<body>
+    <div id="line">
+        <div class="square" id="blue"></div>
+        <div class="square"></div>
+        <div class="square" id="red"></div>
+    </div>
+    <div class="left" id="line">
+        <div class="square" id="yellow"></div>
+        <div class="square" id="green"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="inleft">
+        <div class="square" id="yellow"></div>
+    </div>
+    <div class="all_left" id="line">
+        <div class="square" id="red"></div>
+        <div class="square" id="blue"></div>
+    </div>
+    <div class="square" id="green_rote"></div>
+
+</body>
+</html>
