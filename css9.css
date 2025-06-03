@@ -1,0 +1,22 @@
+#person
+{
+    position: absolute;
+    top: 85px;
+    animation-name: personwalk;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mariowalk
+{
+    0%{left: 10px; top: 85%}
+    50%{left: 400px; top: 30%}
+    100%{left: 800px; top: 85%}
+
+}
+
+#person:hover
+{
+    top: 80%;
+    height: 200px;
+}
