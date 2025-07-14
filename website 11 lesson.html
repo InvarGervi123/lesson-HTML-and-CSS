@@ -9,6 +9,20 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <h1>Welcome to My Website</h1>
+    <p id="demo">This is a paragraph.</p>
+
+    <input type="text" id="nameInput" placeholder="הכנס את שמך">
+    <button onclick="document.getElementById('output').innerText = 'שלום ' + document.getElementById('nameInput').value + '!'">שלח</button>
+    <p id="output"></p>
+
+    <script>
+        var num = 6*7+4;
+        document.getElementById("demo").innerHTML = "A"+ num;
+        document.getElementById("demo").style.color = "blue";
+    </script>
+
+
     
 </body>
 </html>
