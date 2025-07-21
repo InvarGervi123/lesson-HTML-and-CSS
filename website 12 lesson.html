@@ -8,10 +8,29 @@
 </head>
 <body>
     <p id="demo"></p>
+    <h1>bank</h1>
+    <p>your balance is:</p>
     <script>
-        document.getElementById("demo").innerHTML = "Hello JavaScript!";
-        alert("Welcome to JavaScript!");
-        console.log("Error: Something went wrong!");
+        var balance = -200;
+        var demo = document.getElementById("demo");
+        demo.style.color = "red";
+        if (balance < 0){
+            demo.innerText="You are in debt! " + balance;
+        } else if (balance > 0) {
+            demo.innerText="You have a positive balance. " + balance;
+        } else {
+            demo.innerText="Your balance is zero. " + balance;
+        }
+
+        for (var i =0; i < 10 ; i ++){
+            document.getElementById("demo").innerHTML += "<h1>Number: "+i+"</h1>";
+        }
+
+
+        var num = 2172;
+        //document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        //alert("Welcome to JavaScript!");
+        console.log("Error: Something went wrong!" + num);
     </script>
     
 </body>
