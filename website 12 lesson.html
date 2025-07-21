@@ -44,8 +44,11 @@
 
         var rand1=Math.floor(Math.random() * 100) + 1;
         document.getElementById("r1").innerHTML += "<h1>Random number: " + rand1 + "</h1>";
+        console.log("Random number 1: " + rand1);
+
         var rand2=Math.floor(Math.random() * 100) + 1;
         document.getElementById("r2").innerHTML += "<h1>Random number: " + rand2 + "</h1>";
+        console.log("Random number 2: " + rand2);
         if (rand1 == rand2){
             document.getElementById("r1").innerHTML += "<h1 style='color:green'>You win!</h1>";
         } else {
