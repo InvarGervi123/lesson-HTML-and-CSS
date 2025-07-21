@@ -7,9 +7,12 @@
     <script src="js12.js"></script>
 </head>
 <body>
-    <p id="demo"></p>
+    <span><p id="demo"></p></span>
+    <span><h1 id="demo2"></h1></span>
     <h1>bank</h1>
     <p>your balance is:</p>
+    <span id="r1"></span>
+    <span id="r2"></span>
     <script>
         var balance = -200;
         var demo = document.getElementById("demo");
@@ -21,11 +24,34 @@
         } else {
             demo.innerText="Your balance is zero. " + balance;
         }
-
-        for (var i =0; i < 10 ; i ++){
-            document.getElementById("demo").innerHTML += "<h1>Number: "+i+"</h1>";
+        var sum = 0;
+        for (var i =1; i < 10 ; i ++){
+            if (i % 2 == 0) {
+                color = "blue";
+            }
+            else if (i % 3 == 0) {
+                color = "green";
+            }
+            else{
+                color = "red";
+            }
+            document.getElementById("demo").innerHTML +="<h1 style='color:" + color + "'>Number: " + sum + "</h1>";
+            sum += i;
         }
+        document.getElementById("demo").innerHTML += sum;
+        var rand=Math.floor(Math.random() * 100) + 1;
+        document.getElementById("demo2").innerHTML += "<h1>Random number: " + rand + "</h1>";
 
+        var rand1=Math.floor(Math.random() * 100) + 1;
+        document.getElementById("r1").innerHTML += "<h1>Random number: " + rand1 + "</h1>";
+        var rand2=Math.floor(Math.random() * 100) + 1;
+        document.getElementById("r2").innerHTML += "<h1>Random number: " + rand2 + "</h1>";
+        if (rand1 == rand2){
+            document.getElementById("r1").innerHTML += "<h1 style='color:green'>You win!</h1>";
+        } else {
+            document.getElementById("r1").innerHTML += "<h1 style='color:red'>You lose!</h1>";
+        }
+        
 
         var num = 2172;
         //document.getElementById("demo").innerHTML = "Hello JavaScript!";
