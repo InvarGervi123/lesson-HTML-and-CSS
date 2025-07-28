@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="loop()">HI</button>
+    <p id="num"></p>
+    <p id="demo"></p>
+    <script>
+        let num = Math.random() * 1000;
+        document.getElementById("num").innerHTML = "<h1>" + num + "</h1>";
+        let i=0;
+        function loop() {
+            i++;
+            document.getElementById("demo").innerHTML += "<h1>" + i + "</h1>";
+        }
+        window.addEventListener("resize", function() {
+            console.log("Window resized to: " + window.innerWidth + "x" + window.innerHeight);
+        });
+    </script>
+</body>
+</html>

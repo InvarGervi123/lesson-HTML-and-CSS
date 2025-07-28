@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bart Simpson Writing Live</title>
+<style>
+    body {
+        background: #2e2e2e;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        overflow: hidden;
+    }
+    #board {
+        width: 80%;
+        height: 300px;
+        background: #1a3d2f;
+        border: 5px solid #222;
+        margin: 20px auto;
+        color: #f2f2f2;
+        font-size: 24px;
+        text-align: left;
+        padding: 10px;
+        overflow: hidden;
+        font-family: 'Courier New', monospace;
+        position: relative;
+    }
+    #bart {
+        width: 120px;
+        position: absolute;
+        bottom: 5px;
+        transition: left 0.1s linear, bottom 0.1s linear;
+    }
+    #inputText {
+        width: 60%;
+        padding: 10px;
+        font-size: 18px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1>Bart Simpson Chalkboard</h1>
+<input type="text" id="inputText" placeholder="כתוב כאן את המשפט שברט יכתוב">
+<button onclick="startWriting()">כתוב</button>
+
+<div id="board">
+    <div id="textArea"></div>
+    <img id="bart" src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png">
+</div>
+
+<script>
+function startWriting() {
+    const text = document.getElementById('inputText').value + " ";
+    const textArea = document.getElementById('textArea');
+    const bart = document.getElementById('bart');
+
+    textArea.innerText = "";
+    let i = 0, line = 0, repeat = 0;
+
+    let interval = setInterval(() => {
+        if (repeat >= 10) { clearInterval(interval); return; }
+
+        textArea.innerText += text[i];
+        bart.style.left = (i * 12) + "px";
+
+        i++;
+        if (i >= text.length) {
+            i = 0;
+            textArea.innerText += "\n";
+            line++;
+            bart.style.left = "0px";
+            bart.style.bottom = (5 + line * 25) + "px";
+            repeat++;
+        }
+
+        if (line * 25 > 220) { // גלילה אוטומטית
+            textArea.innerText = "";
+            line = 0;
+            bart.style.bottom = "5px";
+        }
+    }, 100);
+}
+</script>
+
+</body>
+</html>
