@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button type="button" class="btn btn-primary" onclick="document.getElementById('demo').innerHTML = 'Hello World!'">Click Me!</button>
+    <button type="button" class="btn btn-secondary" onclick="document.getElementById('demo').innerHTML = 'Goodbye World!'">Click Me Again!</button>
+    <script>
+        const stupidQuotes = [
+        "אם זה שבור, פשוט תכה בזה עם פטיש עד שזה יסתדר.",
+        "אני לא צריך ללמוד – אני גאון טבעי, אמא אמרה לי.",
+        "מים רטובים כי הם מכילים מים.",
+        "העולם שטוח כי אף פעם לא נפלתי מהקצה.",
+        "אם אני אעצור את השעון, הזמן יפסיק לזוז.",
+        "אינטרנט איטי כי הכבלים מתעייפים מרוב שימוש.",
+        "אני לא צריך חגורה בטיחות – אני נוהג טוב מדי בשביל זה.",
+        "אם אכבה את המחשב חזק, הוא יידלק יותר מהר בפעם הבאה.",
+        "כדי לשמור כסף, פשוט אל תוציא אותו מהארנק לעולם.",
+        "החושך הוא רק אור שנשבר."
+        ];
+        document.getElementById("demo").innerHTML = stupidQuotes[Math.floor(Math.random() * stupidQuotes.length)]
+    </script>
+</body>
+</html>

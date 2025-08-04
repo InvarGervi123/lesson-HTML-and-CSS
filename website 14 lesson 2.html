@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name: <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="nummoudel2()">Display Name</button>
+    <p id="nameDisplay"></p>
+    <script>
+        function nummoudel2() {
+            const name = document.getElementById("nameInput").value;
+            if (name % 2 ==0){
+                document.getElementById("nameDisplay").innerHTML = "GOOD, " + name + "!";
+            }
+            else {
+                document.getElementById("nameDisplay").innerHTML = "NOT GOOD, " + name + "!";
+            }
+        }
+    </script>
+</body>
+</html>
