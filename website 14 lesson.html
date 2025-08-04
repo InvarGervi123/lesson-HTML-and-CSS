@@ -7,6 +7,8 @@
 </head>
 <body>
     <button onclick="GetNumber()">CLICK HERE</button>
+    <button onclick="SETDEL()">CLICK TO DEL</button>
+    <p id="demo" onmouseover="sum()"></p>
     <script>
         function getRandomInt(min,max){
             return Math.floor(Math.random() * (max-min+1)) + min;
@@ -16,13 +18,25 @@
             array.push(getRandomInt(1,100));
         }
         array.sort();
-        console.log(array);
+        document.getElementById("demo").innerHTML += "<h1>" + array + "</h1>";
         function GetNumber(){
             let num = prompt("Enter a number between 1 and 100");
             array.push(num);
             array.sort();
-            console.log(num);
+            document.getElementById("demo").innerHTML += "<h1>" + array + "</h1>";
         }
+        function SETDEL(){
+            array.pop();
+            document.getElementById("demo").innerHTML += "<h1>" + array + "</h1>";
+        }
+        function sum(){
+            let sum = 0;
+            for (let i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            document.getElementById("demo").innerHTML = "<h1>" + sum + "</h1>";
+        }
+
 
     </script>
 </body>
