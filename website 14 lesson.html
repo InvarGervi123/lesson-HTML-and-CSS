@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="GetNumber()">CLICK HERE</button>
     <script>
         function getRandomInt(min,max){
             return Math.floor(Math.random() * (max-min+1)) + min;
@@ -16,6 +17,13 @@
         }
         array.sort();
         console.log(array);
+        function GetNumber(){
+            let num = prompt("Enter a number between 1 and 100");
+            array.push(num);
+            array.sort();
+            console.log(num);
+        }
+
     </script>
 </body>
 </html>
