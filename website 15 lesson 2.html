@@ -17,23 +17,23 @@
         let pos1 = {
             id:0,
             title:"Hello",
-            image:"iK0j5L.gif",
+            image:"like.png",
             likes:100
         };
         let posts = [{
             id:0,
             title:"Hello",
-            image:"iK0j5L.gif",
+            image:"like.png",
             likes:100
         },{
             id:0,
             title:"Hello",
-            image:"iK0j5L.gif",
+            image:"like.png",
             likes:100
         },{
             id:0,
             title:"Hello",
-            image:"iK0j5L.gif",
+            image:"like.png",
             likes:100
         }]
         // for (let index = 0; index < 10; index++) {
@@ -42,7 +42,9 @@
         // }
         document.getElementById("demo").innerHTML = pos1.id + "<br>" + "<img src=" + pos1.image + ">" + "<br>" + "likes:" + pos1.likes;
 
-        document.getElementById("demo").innerHTML += "<br>" + "<img src=" + posts[1].image + ">";
+        for (let i = 0 ; i < posts.length;i++){
+            document.getElementById("demo").innerHTML += "<br>" +"title " + posts[i].title + "<img src=" + posts[i].image + ">" + "<br>" + "likes: " + posts[i].likes + "<br>";
+        }
 
     </script>
 </body>
