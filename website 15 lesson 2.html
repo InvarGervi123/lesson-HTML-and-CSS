@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <p id = "demo"></p>
@@ -14,7 +20,29 @@
             image:"iK0j5L.gif",
             likes:100
         };
+        let posts = [{
+            id:0,
+            title:"Hello",
+            image:"iK0j5L.gif",
+            likes:100
+        },{
+            id:0,
+            title:"Hello",
+            image:"iK0j5L.gif",
+            likes:100
+        },{
+            id:0,
+            title:"Hello",
+            image:"iK0j5L.gif",
+            likes:100
+        }]
+        // for (let index = 0; index < 10; index++) {
+        //     posts[index] = pos1;
+            
+        // }
         document.getElementById("demo").innerHTML = pos1.id + "<br>" + "<img src=" + pos1.image + ">" + "<br>" + "likes:" + pos1.likes;
+
+        document.getElementById("demo").innerHTML += "<br>" + "<img src=" + posts[1].image + ">";
 
     </script>
 </body>
