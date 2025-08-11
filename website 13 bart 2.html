@@ -29,7 +29,7 @@
     #bart {
         width: 120px;
         position: absolute;
-        bottom: 5px;
+        bottom: 150px;
         transition: left 0.1s linear, bottom 0.1s linear;
     }
     #inputText {
@@ -76,7 +76,7 @@ function startWriting() {
             textArea.innerText += "\n";
             line++;
             bart.style.left = "0px";
-            bart.style.bottom = (5 + line * 25) + "px";
+            bart.style.bottom = (130 + line * -20) + "px";
             repeat++;
         }
 

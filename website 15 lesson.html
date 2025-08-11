@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"> </p>
+
+    
+    <script>
+        //var d =new Date();
+
+        function myFunction(){
+            timeout = setTimeout(myTimer,3000);
+        }
+
+        function myTimer() {
+            for (let i = 0; i<5;i++){
+                const date = new Date();
+                //date.setSeconds(date.getSeconds()+i*10);
+                setTimeout(3000);
+                document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+            }
+        }
+        document.getElementById("demo").innerHTML = "AAAAAAAAAAAAAAAAAAAAAA";
+        myTimer();
+    </script>
+</body>
+</html>
